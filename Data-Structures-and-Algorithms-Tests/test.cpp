@@ -2,6 +2,7 @@
 #include "../Data-Structures-and-Algorithms/algorithms.h"
 #include "../Data-Structures-and-Algorithms/data-structures.h"
 #include "../Data-Structures-and-Algorithms-Tests/testing-objects.h"
+#include <stdexcept>
 
 namespace AlgorithmTests
 {
@@ -42,5 +43,13 @@ namespace DataStructureTests
 
 		EXPECT_EQ(testEmptyVector.is_empty(), true);
 		EXPECT_EQ(testVectorOne.is_empty(), false);
+	}
+
+	TEST(SimpleVectorTest, ReturnsAtIndexCorrectly)
+	{
+		SimpleVector<int> testVectorTwo(testDataTwo, sizeof(testDataTwo) / sizeof(*testDataTwo));
+
+		EXPECT_EQ(testVectorTwo.at(18), 19);
+		EXPECT_THROW(testVectorTwo.at(34), const char*);
 	}
 }

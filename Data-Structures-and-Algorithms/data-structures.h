@@ -48,6 +48,12 @@ class SimpleVector {
 			return currentSize == 0;
 		}
 
+		int at(int index)
+		{
+			if (currentCapacity - 1 < index) throw "Out of bounds!";
+			return values[index];
+		}
+
 	private:
 		void resize(bool increase)
 		{
