@@ -34,4 +34,13 @@ namespace DataStructureTests
 		EXPECT_EQ(testVectorThree.capacity(), 64);
 		EXPECT_EQ(testVectorFour.capacity(), 128);
 	}
+
+	TEST(SimpleVectorTest, ReturnsIsEmptyCorrectly)
+	{
+		SimpleVector<int> testEmptyVector;
+		SimpleVector<int> testVectorOne(testDataOne, sizeof(testDataOne) / sizeof(*testDataOne));
+
+		EXPECT_EQ(testEmptyVector.is_empty(), true);
+		EXPECT_EQ(testVectorOne.is_empty(), false);
+	}
 }

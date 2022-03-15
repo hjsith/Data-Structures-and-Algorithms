@@ -8,6 +8,10 @@ class SimpleVector {
 	int currentSize = 0;
 
 	public:
+		SimpleVector()
+		{
+		}
+
 		SimpleVector(T startingValue)
 		{
 			values[0] = startingValue;
@@ -37,6 +41,11 @@ class SimpleVector {
 		int capacity()
 		{
 			return currentCapacity;
+		}
+
+		bool is_empty()
+		{
+			return currentSize == 0;
 		}
 
 	private:
