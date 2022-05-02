@@ -1,30 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\lib\native\src\gmock\gmock-all.cc">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\packages\gmock.1.11.0\lib\native\src\gtest\src\gtest_main.cc">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\lib\native\src\gtest\gtest-all.cc">
+      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f74f9b67-7a73-46ac-9f4a-89606beb3db9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{1c62673c-62a4-4291-ba70-1ace52bc001d}</UniqueIdentifier>
+      <UniqueIdentifier>{c44bfc6b-83cd-411b-a543-fb14fbd6c9c2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{be2d097e-6bf4-4e7a-9501-08f5664c105e}</UniqueIdentifier>
+      <UniqueIdentifier>{0f65f5ea-e8d6-4c4c-8348-37327ea005b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="testing-objects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>

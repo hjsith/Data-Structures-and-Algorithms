@@ -1,11 +1,36 @@
-#include "pch.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
 #include "../Data-Structures-and-Algorithms/algorithms.h"
 #include "../Data-Structures-and-Algorithms/data-structures.h"
 #include "../Data-Structures-and-Algorithms-Tests/testing-objects.h"
 #include <stdexcept>
 
+using namespace testing;
+using namespace std;
+
 namespace AlgorithmTests
 {
+	TEST(InsertionSortTest, SortsArrayCorrectly)
+	{
+		int t1[1];
+		int t2[20];
+		int t3[50];
+		int t4[72];
+		copy(begin(testDataOne), end(testDataOne), t1);
+		copy(begin(testDataTwo), end(testDataTwo), t2);
+		copy(begin(testDataThree), end(testDataThree), t3);
+		copy(begin(testDataFour), end(testDataFour), t4);
+
+		Insertion_Sort(t1, sizeof(t1) / sizeof(*t1));
+		Insertion_Sort(t2, sizeof(t2) / sizeof(*t2));
+		Insertion_Sort(t3, sizeof(t3) / sizeof(*t3));
+		Insertion_Sort(t4, sizeof(t4) / sizeof(*t4));
+
+		ASSERT_THAT(t1, ElementsAreArray(sortedTestDataOne));
+		ASSERT_THAT(t2, ElementsAreArray(sortedTestDataTwo));
+		ASSERT_THAT(t3, ElementsAreArray(sortedTestDataThree));
+		ASSERT_THAT(t4, ElementsAreArray(sortedTestDataFour));
+	}
 }
 
 namespace DataStructureTests
